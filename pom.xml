@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+
+  <groupId>com.learn</groupId>
+  <artifactId>SpringImportsThroughModules</artifactId>
+  <version>1.0-SNAPSHOT</version>
+  <packaging>pom</packaging>
+
+  <properties>
+    <project.version>1.0-SNAPSHOT</project.version>
+    <spring.version>4.3.16.RELEASE</spring.version>
+  </properties>
+
+  <modules>
+    <module>FirstModuleSPI</module>
+    <module>FirstModuleSPIImpl</module>
+    <module>WebApp</module>
+    <module>SecondModuleSPI</module>
+    <module>SecondModuleSPIImpl</module>
+    <module>UiModule</module>
+    <module>WebApp</module>
+  </modules>
+
+  <dependencyManagement>
+    <dependencies>
+      <dependency>
+        <groupId>com.learn</groupId>
+        <artifactId>UiModule</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.learn</groupId>
+        <artifactId>FirstModuleSPI</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.learn</groupId>
+        <artifactId>FirstModuleSPIImpl</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.learn</groupId>
+        <artifactId>SecondModuleSPI</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+      <dependency>
+        <groupId>com.learn</groupId>
+        <artifactId>SecondModuleSPIImpl</artifactId>
+        <version>${project.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-webmvc</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+
+      <dependency>
+        <groupId>org.springframework</groupId>
+        <artifactId>spring-context</artifactId>
+        <version>${spring.version}</version>
+      </dependency>
+
+    </dependencies>
+  </dependencyManagement>
+
+</project>
